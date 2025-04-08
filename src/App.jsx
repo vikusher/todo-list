@@ -16,9 +16,9 @@ function App() {
     <div>
       <h1>Todo List</h1>
       <TodoForm onAddTodo={handleAddTodo} />
-      <TodoList /> 
+      <TodoList todoList={todoList}/> 
     </div>
-  )
+  );
 }
 
 export default App;
