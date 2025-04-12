@@ -6,16 +6,21 @@ import { useState } from 'react';
 
 function App() {
 
-  const [newTodo, setNewTodo] = useState('My first todo:');
+  const [todoList, setTodoList] = useState([]);
+
+  function handleAddTodo(newTodo) {
+    setTodoList ([...todoList, newTodo]);
+  }
+
 
   return (
     <div>
       <h1>Todo List</h1>
-      <TodoForm setNewTodo={setNewTodo} />
-      <p>{newTodo}</p>
-      <TodoList /> 
+      <TodoForm onAddTodo={handleAddTodo} />
+      <TodoList todoList={todoList}/> 
+
     </div>
-  )
+  );
 }
 
 export default App;
